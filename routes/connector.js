@@ -5,8 +5,8 @@ var connection = mysql.createPool({
   connectionLimit:50,
 	host:'localhost',
 	user:'root',
-	password:'Cashway17',
-	database:'NodeFireBase'
+	password:'Your_DataBase_Pass',
+	database:'Your_DataBase_Name'
 });
 
 connection.getConnection(function(error,tempConn){
