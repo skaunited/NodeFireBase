@@ -1,0 +1,1088 @@
+doctype html
+html(lang='en')
+  head
+    title Matrix Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/fullcalendar.css')
+    link(rel='stylesheet', href='css/matrix-style.css')
+    link(rel='stylesheet', href='css/matrix-media.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    // Header-part
+    #header
+      h1
+        a(href='dashboard.html') Matrix Admin
+    // close-Header-part
+    // top-Header-menu
+    #user-nav.navbar.navbar-inverse
+      ul.nav
+        li#profile-messages.dropdown
+          a.dropdown-toggle(title='', href='#', data-toggle='dropdown', data-target='#profile-messages')
+            i.icon.icon-user
+            span.text Welcome User
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='#')
+                i.icon-user
+                |  My Profile
+            li.divider
+            li
+              a(href='#')
+                i.icon-check
+                |  My Tasks
+            li.divider
+            li
+              a(href='login.html')
+                i.icon-key
+                |  Log Out
+        li#menu-messages.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown', data-target='#menu-messages')
+            i.icon.icon-envelope
+            span.text Messages
+            span.label.label-important 5
+            b.caret
+          ul.dropdown-menu
+            li
+              a.sAdd(title='', href='#')
+                i.icon-plus
+                |  new message
+            li.divider
+            li
+              a.sInbox(title='', href='#')
+                i.icon-envelope
+                |  inbox
+            li.divider
+            li
+              a.sOutbox(title='', href='#')
+                i.icon-arrow-up
+                |  outbox
+            li.divider
+            li
+              a.sTrash(title='', href='#')
+                i.icon-trash
+                |  trash
+        li
+          a(title='', href='#')
+            i.icon.icon-cog
+            span.text Settings
+        li
+          a(title='', href='login.html')
+            i.icon.icon-share-alt
+            span.text Logout
+    // start-top-serch
+    #search
+      input(type='text', placeholder='Search here...')
+      button.tip-bottom(type='submit', title='Search')
+        i.icon-search.icon-white
+    // close-top-serch
+    // sidebar-menu
+    #sidebar
+      a.visible-phone(href='#')
+        i.icon.icon-home
+        |  Dashboard
+      ul
+        li.active
+          a(href='index')
+            i.icon.icon-home
+            span Dashboard
+        li
+          a(href='charts')
+            i.icon.icon-signal
+            span Charts & graphs
+        li
+          a(href='widgets')
+            i.icon.icon-inbox
+            span Widgets
+        li
+          a(href='tables')
+            i.icon.icon-th
+            span Tables
+        li
+          a(href='grid')
+            i.icon.icon-fullscreen
+            span Full width
+        li.submenu
+          a(href='#')
+            i.icon.icon-th-list
+            span Forms
+            span.label.label-important 3
+          ul
+            li
+              a(href='form-common') Basic Form
+            li
+              a(href='form-validation') Form with Validation
+            li
+              a(href='form-wizard') Form with Wizard
+        li
+          a(href='buttons')
+            i.icon.icon-tint
+            span Buttons & icons
+        li
+          a(href='interface')
+            i.icon.icon-pencil
+            span Eelements
+        li.submenu
+          a(href='#')
+            i.icon.icon-file
+            span Addons
+            span.label.label-important 5
+          ul
+            li
+              a(href='index2') Dashboard2
+            li
+              a(href='gallery') Gallery
+            li
+              a(href='calendar') Calendar
+            li
+              a(href='invoice') Invoice
+            li
+              a(href='chat') Chat option
+        li.submenu
+          a(href='#')
+            i.icon.icon-info-sign
+            span Error
+            span.label.label-important 4
+          ul
+            li
+              a(href='error403') Error 403
+            li
+              a(href='error404') Error 404
+            li
+              a(href='error405') Error 405
+            li
+              a(href='error500') Error 500
+        li.content
+          span Monthly Bandwidth Transfer
+          .progress.progress-mini.progress-danger.active.progress-striped
+            .bar(style='width: 77%;')
+          span.percent 77%
+          .stat 21419.94 / 14000 MB
+        li.content
+          span Disk Space Usage
+          .progress.progress-mini.active.progress-striped
+            .bar(style='width: 87%;')
+          span.percent 87%
+          .stat 604.44 / 4000 MB
+    // main-container-part
+    #content
+      #content-header
+        #breadcrumb
+          a.tip-bottom(href='#', title='Go to Home')
+            i.icon-home
+            |  Home
+          a.current(href='#') Buttons & icons
+        h1 Buttons & icons
+      .container-fluid
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-bookmark
+                h5 All Buttons
+              .widget-content
+                h5 Mini Buttons
+                code (class="btn btn-mini")
+                p
+                  button.btn.btn-mini Button
+                  button.btn.btn-primary.btn-mini btn-primary
+                  button.btn.btn-info.btn-mini btn-info
+                  button.btn.btn-success.btn-mini btn-success
+                  button.btn.btn-warning.btn-mini btn-warning
+                  button.btn.btn-danger.btn-mini btn-danger
+                  button.btn.btn-inverse.btn-mini btn-inverse
+                hr
+                h4 General Buttons
+                code (class="btn")
+                p
+                  button.btn Button
+                  button.btn.btn-primary btn-primary
+                  button.btn.btn-info btn-info
+                  button.btn.btn-success btn-success
+                  button.btn.btn-warning btn-warning
+                  button.btn.btn-danger btn-danger
+                  button.btn.btn-inverse btn-inverse
+                hr
+                h3 Large Buttons
+                code (class="btn btn-large")
+                p
+                  button.btn.btn-large Button
+                  button.btn.btn-primary.btn-large btn-primary
+                  button.btn.btn-info.btn-large btn-info
+                  button.btn.btn-success.btn-large btn-success
+                  button.btn.btn-warning.btn-large btn-warning
+                  button.btn.btn-danger.btn-large btn-danger
+                  button.btn.btn-inverse.btn-large btn-inverse
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-bookmark
+                h5 All Buttons
+              .widget-content
+                h3
+                  | Button dropdowns
+                  code (class="btn-group", "btn dropdown-toggle")
+                .btn-group
+                  button.btn.dropdown-toggle(data-toggle='dropdown')
+                    | btn-group
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider
+                    li
+                      a(href='#') Separated link
+                .btn-group
+                  button.btn.btn-primary.dropdown-toggle(data-toggle='dropdown')
+                    | Action
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider
+                    li
+                      a(href='#') Separated link
+                .btn-group
+                  button.btn.btn-danger.dropdown-toggle(data-toggle='dropdown')
+                    | Danger
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider
+                    li
+                      a(href='#') Separated link
+                .btn-group
+                  button.btn.btn-warning.dropdown-toggle(data-toggle='dropdown')
+                    | Warning
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider
+                    li
+                      a(href='#') Separated link
+                .btn-group
+                  button.btn.btn-success.dropdown-toggle(data-toggle='dropdown')
+                    | Success
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider
+                    li
+                      a(href='#') Separated link
+                .btn-group
+                  button.btn.btn-info.dropdown-toggle(data-toggle='dropdown')
+                    | Info
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider
+                    li
+                      a(href='#') Separated link
+                .btn-group
+                  button.btn.btn-inverse.dropdown-toggle(data-toggle='dropdown')
+                    | Inverse
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider
+                    li
+                      a(href='#') Separated link
+          .widget-box
+            .widget-title
+              span.icon
+                i.icon-bookmark
+              h5 All Buttons
+            .widget-content
+              h3 Split button dropdowns
+              p
+                | Building on the button group styles and markup, we can easily create a split button. Split buttons feature a standard action on the left and a dropdown toggle on the right with contextual links.
+              .btn-group
+                button.btn Action
+                button.btn.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              .btn-group
+                button.btn.btn-primary Action
+                button.btn.btn-primary.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              .btn-group
+                button.btn.btn-danger Danger
+                button.btn.btn-danger.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              .btn-group
+                button.btn.btn-warning Warning
+                button.btn.btn-warning.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              .btn-group
+                button.btn.btn-success Success
+                button.btn.btn-success.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              .btn-group
+                button.btn.btn-info Info
+                button.btn.btn-info.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              .btn-group
+                button.btn.btn-inverse Inverse
+                button.btn.btn-inverse.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+          .row-fluid
+            .span12
+              .widget-box
+                .widget-title
+                  span.icon
+                    i.icon-play-circle
+                  h5 Font Awesome icons
+                .widget-content
+                  .row-fluid
+                    .span12.btn-icon-pg
+                      ul
+                        li
+                          i.icon-adjust
+                          |  icon-adjust
+                        li
+                          i.icon-asterisk
+                          |  icon-asterisk
+                        li
+                          i.icon-ban-circle
+                          |  icon-ban-circle
+                        li
+                          i.icon-bar-chart
+                          |  icon-bar-chart
+                        li
+                          i.icon-barcode
+                          |  icon-barcode
+                        li
+                          i.icon-beaker
+                          |  icon-beaker
+                        li
+                          i.icon-bell
+                          |  icon-bell
+                        li
+                          i.icon-bolt
+                          |  icon-bolt
+                        li
+                          i.icon-book
+                          |  icon-book
+                        li
+                          i.icon-bookmark
+                          |  icon-bookmark
+                        li
+                          i.icon-bookmark-empty
+                          |  icon-bookmark-empty
+                        li
+                          i.icon-briefcase
+                          |  icon-briefcase
+                        li
+                          i.icon-bullhorn
+                          |  icon-bullhorn
+                        li
+                          i.icon-calendar
+                          |  icon-calendar
+                        li
+                          i.icon-camera
+                          |  icon-camera
+                        li
+                          i.icon-camera-retro
+                          |  icon-camera-retro
+                        li
+                          i.icon-certificate
+                          |  icon-certificate
+                        li
+                          i.icon-check
+                          |  icon-check
+                        li
+                          i.icon-check-empty
+                          |  icon-check-empty
+                        li
+                          i.icon-cloud
+                          |  icon-cloud
+                        li
+                          i.icon-cog
+                          |  icon-cog
+                        li
+                          i.icon-cogs
+                          |  icon-cogs
+                        li
+                          i.icon-comment
+                          |  icon-comment
+                        li
+                          i.icon-comment-alt
+                          |  icon-comment-alt
+                        li
+                          i.icon-comments
+                          |  icon-comments
+                        li
+                          i.icon-comments-alt
+                          |  icon-comments-alt
+                        li
+                          i.icon-credit-card
+                          |  icon-credit-card
+                        li
+                          i.icon-dashboard
+                          |  icon-dashboard
+                        li
+                          i.icon-download
+                          |  icon-download
+                        li
+                          i.icon-download-alt
+                          |  icon-download-alt
+                        li
+                          i.icon-edit
+                          |  icon-edit
+                        li
+                          i.icon-envelope
+                          |  icon-envelope
+                        li
+                          i.icon-envelope-alt
+                          |  icon-envelope-alt
+                        li
+                          i.icon-exclamation-sign
+                          |  icon-exclamation-sign
+                        li
+                          i.icon-external-link
+                          |  icon-external-link
+                        li
+                          i.icon-eye-close
+                          |  icon-eye-close
+                        li
+                          i.icon-eye-open
+                          |  icon-eye-open
+                        li
+                          i.icon-facetime-video
+                          |  icon-facetime-video
+                        li
+                          i.icon-film
+                          |  icon-film
+                        li
+                          i.icon-filter
+                          |  icon-filter
+                        li
+                          i.icon-fire
+                          |  icon-fire
+                        li
+                          i.icon-flag
+                          |  icon-flag
+                        li
+                          i.icon-folder-close
+                          |  icon-folder-close
+                        li
+                          i.icon-folder-open
+                          |  icon-folder-open
+                        li
+                          i.icon-gift
+                          |  icon-gift
+                        li
+                          i.icon-glass
+                          |  icon-glass
+                        li
+                          i.icon-globe
+                          |  icon-globe
+                        li
+                          i.icon-group
+                          |  icon-group
+                        li
+                          i.icon-hdd
+                          |  icon-hdd
+                        li
+                          i.icon-headphones
+                          |  icon-headphones
+                        li
+                          i.icon-heart
+                          |  icon-heart
+                        li
+                          i.icon-heart-empty
+                          |  icon-heart-empty
+                        li
+                          i.icon-home
+                          |  icon-home
+                        li
+                          i.icon-inbox
+                          |  icon-inbox
+                        li
+                          i.icon-info-sign
+                          |  icon-info-sign
+                        li
+                          i.icon-key
+                          |  icon-key
+                        li
+                          i.icon-leaf
+                          |  icon-leaf
+                        li
+                          i.icon-legal
+                          |  icon-legal
+                        li
+                          i.icon-lemon
+                          |  icon-lemon
+                        li
+                          i.icon-lock
+                          |  icon-lock
+                        li
+                          i.icon-unlock
+                          |  icon-unlock
+                        li
+                          i.icon-magic
+                          |  icon-magic
+                        li
+                          i.icon-magnet
+                          |  icon-magnet
+                        li
+                          i.icon-map-marker
+                          |  icon-map-marker
+                        li
+                          i.icon-minus
+                          |  icon-minus
+                        li
+                          i.icon-minus-sign
+                          |  icon-minus-sign
+                        li
+                          i.icon-money
+                          |  icon-money
+                        li
+                          i.icon-move
+                          |  icon-move
+                        li
+                          i.icon-music
+                          |  icon-music
+                        li
+                          i.icon-off
+                          |  icon-off
+                        li
+                          i.icon-ok
+                          |  icon-ok
+                        li
+                          i.icon-ok-circle
+                          |  icon-ok-circle
+                        li
+                          i.icon-ok-sign
+                          |  icon-ok-sign
+                        li
+                          i.icon-pencil
+                          |  icon-pencil
+                        li
+                          i.icon-picture
+                          |  icon-picture
+                        li
+                          i.icon-plane
+                          |  icon-plane
+                        li
+                          i.icon-plus
+                          |  icon-plus
+                        li
+                          i.icon-plus-sign
+                          |  icon-plus-sign
+                        li
+                          i.icon-print
+                          |  icon-print
+                        li
+                          i.icon-pushpin
+                          |  icon-pushpin
+                        li
+                          i.icon-qrcode
+                          |  icon-qrcode
+                        li
+                          i.icon-question-sign
+                          |  icon-question-sign
+                        li
+                          i.icon-random
+                          |  icon-random
+                        li
+                          i.icon-refresh
+                          |  icon-refresh
+                        li
+                          i.icon-remove
+                          |  icon-remove
+                        li
+                          i.icon-remove-circle
+                          |  icon-remove-circle
+                        li
+                          i.icon-remove-sign
+                          |  icon-remove-sign
+                        li
+                          i.icon-reorder
+                          |  icon-reorder
+                        li
+                          i.icon-resize-horizontal
+                          |  icon-resize-horizontal
+                        li
+                          i.icon-resize-vertical
+                          |  icon-resize-vertical
+                        li
+                          i.icon-retweet
+                          |  icon-retweet
+                        li
+                          i.icon-road
+                          |  icon-road
+                        li
+                          i.icon-rss
+                          |  icon-rss
+                        li
+                          i.icon-screenshot
+                          |  icon-screenshot
+                        li
+                          i.icon-search
+                          |  icon-search
+                        li
+                          i.icon-share
+                          |  icon-share
+                        li
+                          i.icon-share-alt
+                          |  icon-share-alt
+                        li
+                          i.icon-shopping-cart
+                          |  icon-shopping-cart
+                        li
+                          i.icon-signal
+                          |  icon-signal
+                        li
+                          i.icon-signin
+                          |  icon-signin
+                        li
+                          i.icon-signout
+                          |  icon-signout
+                        li
+                          i.icon-sitemap
+                          |  icon-sitemap
+                        li
+                          i.icon-sort
+                          |  icon-sort
+                        li
+                          i.icon-sort-down
+                          |  icon-sort-down
+                        li
+                          i.icon-sort-up
+                          |  icon-sort-up
+                        li
+                          i.icon-star
+                          |  icon-star
+                        li
+                          i.icon-star-empty
+                          |  icon-star-empty
+                        li
+                          i.icon-star-half
+                          |  icon-star-half
+                        li
+                          i.icon-tag
+                          |  icon-tag
+                        li
+                          i.icon-tags
+                          |  icon-tags
+                        li
+                          i.icon-tasks
+                          |  icon-tasks
+                        li
+                          i.icon-thumbs-down
+                          |  icon-thumbs-down
+                        li
+                          i.icon-thumbs-up
+                          |  icon-thumbs-up
+                        li
+                          i.icon-time
+                          |  icon-time
+                        li
+                          i.icon-tint
+                          |  icon-tint
+                        li
+                          i.icon-trash
+                          |  icon-trash
+                        li
+                          i.icon-trophy
+                          |  icon-trophy
+                        li
+                          i.icon-truck
+                          |  icon-truck
+                        li
+                          i.icon-umbrella
+                          |  icon-umbrella
+                        li
+                          i.icon-upload
+                          |  icon-upload
+                        li
+                          i.icon-upload-alt
+                          |  icon-upload-alt
+                        li
+                          i.icon-user
+                          |  icon-user
+                        li
+                          i.icon-user-md
+                          |  icon-user-md
+                        li
+                          i.icon-volume-off
+                          |  icon-volume-off
+                        li
+                          i.icon-volume-down
+                          |  icon-volume-down
+                        li
+                          i.icon-volume-up
+                          |  icon-volume-up
+                        li
+                          i.icon-warning-sign
+                          |  icon-warning-sign
+                        li
+                          i.icon-wrench
+                          |  icon-wrench
+                        li
+                          i.icon-zoom-in
+                          |  icon-zoom-in
+                        li
+                          i.icon-zoom-out
+                          |  icon-zoom-out
+                        li
+                          i.icon-file
+                          |  icon-file
+                        li
+                          i.icon-cut
+                          |  icon-cut
+                        li
+                          i.icon-copy
+                          |  icon-copy
+                        li
+                          i.icon-paste
+                          |  icon-paste
+                        li
+                          i.icon-save
+                          |  icon-save
+                        li
+                          i.icon-undo
+                          |  icon-undo
+                        li
+                          i.icon-repeat
+                          |  icon-repeat
+                        li
+                          i.icon-paper-clip
+                          |  icon-paper-clip
+                        li
+                          i.icon-text-height
+                          |  icon-text-height
+                        li
+                          i.icon-text-width
+                          |  icon-text-width
+                        li
+                          i.icon-align-left
+                          |  icon-align-left
+                        li
+                          i.icon-align-center
+                          |  icon-align-center
+                        li
+                          i.icon-align-right
+                          |  icon-align-right
+                        li
+                          i.icon-align-justify
+                          |  icon-align-justify
+                        li
+                          i.icon-indent-left
+                          |  icon-indent-left
+                        li
+                          i.icon-indent-right
+                          |  icon-indent-right
+                        li
+                          i.icon-font
+                          |  icon-font
+                        li
+                          i.icon-bold
+                          |  icon-bold
+                        li
+                          i.icon-italic
+                          |  icon-italic
+                        li
+                          i.icon-strikethrough
+                          |  icon-strikethrough
+                        li
+                          i.icon-underline
+                          |  icon-underline
+                        li
+                          i.icon-link
+                          |  icon-link
+                        li
+                          i.icon-columns
+                          |  icon-columns
+                        li
+                          i.icon-table
+                          |  icon-table
+                        li
+                          i.icon-th-large
+                          |  icon-th-large
+                        li
+                          i.icon-th
+                          |  icon-th
+                        li
+                          i.icon-th-list
+                          |  icon-th-list
+                        li
+                          i.icon-list
+                          |  icon-list
+                        li
+                          i.icon-list-ol
+                          |  icon-list-ol
+                        li
+                          i.icon-list-ul
+                          |  icon-list-ul
+                        li
+                          i.icon-list-alt
+                          |  icon-list-alt
+                        li
+                          i.icon-arrow-down
+                          |  icon-arrow-down
+                        li
+                          i.icon-arrow-left
+                          |  icon-arrow-left
+                        li
+                          i.icon-arrow-right
+                          |  icon-arrow-right
+                        li
+                          i.icon-arrow-up
+                          |  icon-arrow-up
+                        li
+                          i.icon-chevron-down
+                          |  icon-chevron-down
+                        li
+                          i.icon-circle-arrow-down
+                          |  icon-circle-arrow-down
+                        li
+                          i.icon-circle-arrow-left
+                          |  icon-circle-arrow-left
+                        li
+                          i.icon-circle-arrow-right
+                          |  icon-circle-arrow-right
+                        li
+                          i.icon-circle-arrow-up
+                          |  icon-circle-arrow-up
+                        li
+                          i.icon-chevron-left
+                          |  icon-chevron-left
+                        li
+                          i.icon-caret-down
+                          |  icon-caret-down
+                        li
+                          i.icon-caret-left
+                          |  icon-caret-left
+                        li
+                          i.icon-caret-right
+                          |  icon-caret-right
+                        li
+                          i.icon-caret-up
+                          |  icon-caret-up
+                        li
+                          i.icon-chevron-right
+                          |  icon-chevron-right
+                        li
+                          i.icon-hand-down
+                          |  icon-hand-down
+                        li
+                          i.icon-hand-left
+                          |  icon-hand-left
+                        li
+                          i.icon-hand-right
+                          |  icon-hand-right
+                        li
+                          i.icon-hand-up
+                          |  icon-hand-up
+                        li
+                          i.icon-chevron-up
+                          |  icon-chevron-up
+                        li
+                          i.icon-play-circle
+                          |  icon-play-circle
+                        li
+                          i.icon-play
+                          |  icon-play
+                        li
+                          i.icon-pause
+                          |  icon-pause
+                        li
+                          i.icon-stop
+                          |  icon-stop
+                        li
+                          i.icon-step-backward
+                          |  icon-step-backward
+                        li
+                          i.icon-fast-backward
+                          |  icon-fast-backward
+                        li
+                          i.icon-backward
+                          |  icon-backward
+                        li
+                          i.icon-forward
+                          |  icon-forward
+                        li
+                          i.icon-fast-forward
+                          |  icon-fast-forward
+                        li
+                          i.icon-step-forward
+                          |  icon-step-forward
+                        li
+                          i.icon-eject
+                          |  icon-eject
+                        li
+                          i.icon-fullscreen
+                          |  icon-fullscreen
+                        li
+                          i.icon-resize-full
+                          |  icon-resize-full
+                        li
+                          i.icon-resize-small
+                          |  icon-resize-small
+                        li
+                          i.icon-phone
+                          |  icon-phone
+                        li
+                          i.icon-phone-sign
+                          |  icon-phone-sign
+                        li
+                          i.icon-facebook
+                          |  icon-facebook
+                        li
+                          i.icon-facebook-sign
+                          |  icon-facebook-sign
+                        li
+                          i.icon-twitter
+                          |  icon-twitter
+                        li
+                          i.icon-twitter-sign
+                          |  icon-twitter-sign
+                        li
+                          i.icon-github
+                          |  icon-github
+                        li
+                          i.icon-github-sign
+                          |  icon-github-sign
+                        li
+                          i.icon-linkedin
+                          |  icon-linkedin
+                        li
+                          i.icon-linkedin-sign
+                          |  icon-linkedin-sign
+                        li
+                          i.icon-pinterest
+                          |  icon-pinterest
+                        li
+                          i.icon-pinterest-sign
+                          |  icon-pinterest-sign
+                        li
+                          i.icon-google-plus
+                          |  icon-google-plus
+                        li
+                          i.icon-google-plus-sign
+                          |  icon-google-plus-sign
+                        li
+                          i.icon-sign-blank
+                          |  icon-sign-blank
+    // End-main-container-part
+    // Footer-part
+    // Footer-part
+    .row-fluid
+      #footer.span12
+        | 2013 © Matrix Admin. Brought to you by
+        a(href='http://themedesigner.in') Themedesigner.in
+    // end-Footer-part
+    // end-Footer-part
+    script(src='js/jquery.min.js')
+    script(src='js/jquery.ui.custom.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/matrix.js')

@@ -1,0 +1,550 @@
+doctype html
+html(lang='en')
+  head
+    title Matrix Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/jquery.gritter.css')
+    link(rel='stylesheet', href='css/matrix-style.css')
+    link(rel='stylesheet', href='css/matrix-media.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    // Header-part
+    #header
+      h1
+        a(href='dashboard.html') Matrix Admin
+    // close-Header-part
+    // top-Header-menu
+    #user-nav.navbar.navbar-inverse
+      ul.nav
+        li#profile-messages.dropdown
+          a.dropdown-toggle(title='', href='#', data-toggle='dropdown', data-target='#profile-messages')
+            i.icon.icon-user
+            span.text Welcome User
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='#')
+                i.icon-user
+                |  My Profile
+            li.divider
+            li
+              a(href='#')
+                i.icon-check
+                |  My Tasks
+            li.divider
+            li
+              a(href='login.html')
+                i.icon-key
+                |  Log Out
+        li#menu-messages.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown', data-target='#menu-messages')
+            i.icon.icon-envelope
+            span.text Messages
+            span.label.label-important 5
+            b.caret
+          ul.dropdown-menu
+            li
+              a.sAdd(title='', href='#')
+                i.icon-plus
+                |  new message
+            li.divider
+            li
+              a.sInbox(title='', href='#')
+                i.icon-envelope
+                |  inbox
+            li.divider
+            li
+              a.sOutbox(title='', href='#')
+                i.icon-arrow-up
+                |  outbox
+            li.divider
+            li
+              a.sTrash(title='', href='#')
+                i.icon-trash
+                |  trash
+        li
+          a(title='', href='#')
+            i.icon.icon-cog
+            span.text Settings
+        li
+          a(title='', href='login.html')
+            i.icon.icon-share-alt
+            span.text Logout
+    // start-top-serch
+    #search
+      input(type='text', placeholder='Search here...')
+      button.tip-bottom(type='submit', title='Search')
+        i.icon-search.icon-white
+    // close-top-serch
+    // sidebar-menu
+    #sidebar
+      a.visible-phone(href='#')
+        i.icon.icon-home
+        |  Dashboard
+      ul
+        li.active
+          a(href='index')
+            i.icon.icon-home
+            span Dashboard
+        li
+          a(href='charts')
+            i.icon.icon-signal
+            span Charts & graphs
+        li
+          a(href='widgets')
+            i.icon.icon-inbox
+            span Widgets
+        li
+          a(href='tables')
+            i.icon.icon-th
+            span Tables
+        li
+          a(href='grid')
+            i.icon.icon-fullscreen
+            span Full width
+        li.submenu
+          a(href='#')
+            i.icon.icon-th-list
+            span Forms
+            span.label.label-important 3
+          ul
+            li
+              a(href='form-common') Basic Form
+            li
+              a(href='form-validation') Form with Validation
+            li
+              a(href='form-wizard') Form with Wizard
+        li
+          a(href='buttons')
+            i.icon.icon-tint
+            span Buttons & icons
+        li
+          a(href='interface')
+            i.icon.icon-pencil
+            span Eelements
+        li.submenu
+          a(href='#')
+            i.icon.icon-file
+            span Addons
+            span.label.label-important 5
+          ul
+            li
+              a(href='index2') Dashboard2
+            li
+              a(href='gallery') Gallery
+            li
+              a(href='calendar') Calendar
+            li
+              a(href='invoice') Invoice
+            li
+              a(href='chat') Chat option
+        li.submenu
+          a(href='#')
+            i.icon.icon-info-sign
+            span Error
+            span.label.label-important 4
+          ul
+            li
+              a(href='error403') Error 403
+            li
+              a(href='error404') Error 404
+            li
+              a(href='error405') Error 405
+            li
+              a(href='error500') Error 500
+        li.content
+          span Monthly Bandwidth Transfer
+          .progress.progress-mini.progress-danger.active.progress-striped
+            .bar(style='width: 77%;')
+          span.percent 77%
+          .stat 21419.94 / 14000 MB
+        li.content
+          span Disk Space Usage
+          .progress.progress-mini.active.progress-striped
+            .bar(style='width: 87%;')
+          span.percent 87%
+          .stat 604.44 / 4000 MB
+    // main-container-part
+    #content
+      #content-header
+        #breadcrumb
+          a.tip-bottom(href='#', title='Go to Home')
+            i.icon-home
+            |  Home
+          a.current(href='#') Interface elements
+        h1 Interface elements
+      .container-fluid
+        hr
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-ok-sign
+                h5 Labels and badges
+              .widget-content
+                table.table.table-bordered.table-striped
+                  thead
+                    tr
+                      th Labels
+                      th Markup
+                  tbody
+                    tr
+                      td
+                        span.label Default
+                      td
+                        code <span class="label">
+                    tr
+                      td
+                        span.label.label-success Success
+                      td
+                        code <span class="label label-success">
+                    tr
+                      td
+                        span.label.label-warning Warning
+                      td
+                        code <span class="label label-warning">
+                    tr
+                      td
+                        span.label.label-important Important
+                      td
+                        code <span class="label label-important">
+                    tr
+                      td
+                        span.label.label-info Info
+                      td
+                        code <span class="label label-info">
+                    tr
+                      td
+                        span.label.label-inverse Inverse
+                      td
+                        code <span class="label label-inverse">
+                table.table.table-bordered.table-striped
+                  thead
+                    tr
+                      th Name
+                      th Example
+                      th Markup
+                  tbody
+                    tr
+                      td  Default
+                      td
+                        span.badge 1
+                      td
+                        code <span class="badge">
+                    tr
+                      td  Success
+                      td
+                        span.badge.badge-success 2
+                      td
+                        code <span class="badge badge-success">
+                    tr
+                      td  Warning
+                      td
+                        span.badge.badge-warning 4
+                      td
+                        code <span class="badge badge-warning">
+                    tr
+                      td  Important
+                      td
+                        span.badge.badge-important 6
+                      td
+                        code <span class="badge badge-important">
+                    tr
+                      td  Info
+                      td
+                        span.badge.badge-info 8
+                      td
+                        code <span class="badge badge-info">
+                    tr
+                      td  Inverse
+                      td
+                        span.badge.badge-inverse 10
+                      td
+                        code <span class="badge badge-inverse">
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-hand-right
+                h5 Different notifications
+              .widget-content.notify-ui
+                ul#gritter-notify
+                  li.normal Standard notification
+                  li.sticky Sticky notification
+                  li.image(data-image='img/demo/envelope.png') Notification with image
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-hand-right
+                h5 Icon With box
+              .widget-content
+                ul.quick-actions
+                  li.bg_lb
+                    a(href='#')
+                      i.icon-book
+                      |  icon-book
+                  li.bg_lg
+                    a(href='#')
+                      i.icon-tasks
+                      |  icon-cabinet
+                  li.bg_ly
+                    a(href='#')
+                      i.icon-calendar
+                      |  icon-calendar
+                  li.bg_lo
+                    a(href='#')
+                      i.icon-user
+                      |  icon-client
+                  li.bg_ls
+                    a(href='#')
+                      i.icon-upload-alt
+                      |  icon-database
+                  li.bg_lb
+                    a(href='#')
+                      i.icon-download
+                      |  icon-download
+                  li.bg_lg
+                    a(href='#')
+                      i.icon-bar-chart
+                      |  icon-graph
+                  li.bg_lo
+                    a(href='#')
+                      i.icon-home
+                      | icon-home
+                  li.bg_ls
+                    a(href='#')
+                      i.icon-lock
+                      |  icon-lock
+                  li.bg_lb
+                    a(href='#')
+                      i.icon-envelope-alt
+                      | icon-mail
+                  li.bg_lg
+                    a(href='#')
+                      i.icon-dashboard
+                      |  icon-Dashboard
+                  li.bg_lo
+                    a(href='#')
+                      i.icon-facetime-video
+                      | icon-facetime-video
+                  li.bg_ly
+                    a(href='#')
+                      i.icon-external-link
+                      |  icon-external-link
+                  li.bg_lg
+                    a(href='#')
+                      i.icon-folder-open
+                      | icon-folder-open
+                pre.prettyprint.linenums.
+                  \n<ul class="quick-actions">
+                                <li a href="#"> <i class="icon-book"></i> icon-book </a> </li>                   </ul>
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-signal
+                h5 Different Bars
+              .widget-content
+                .progress.progress-info
+                  .bar(style='width: 20%')
+                .progress.progress-success
+                  .bar(style='width: 40%')
+                .progress.progress-warning
+                  .bar(style='width: 60%')
+                .progress.progress-danger
+                  .bar(style='width: 80%')
+                pre.prettyprint.linenums.
+                  \n
+                .progress.progress-striped
+                  .bar(style='width: 60%;')
+                .progress.progress-striped.progress-success
+                  .bar(style='width: 60%;')
+                .progress.progress-striped.progress-warning
+                  .bar(style='width: 60%;')
+                .progress.progress-striped.progress-danger
+                  .bar(style='width: 60%;')
+                pre.prettyprint.linenums.
+                  \n
+                .progress.progress-striped.active
+                  .bar(style='width: 60%;')
+                .progress.progress-striped.progress-success.active
+                  .bar(style='width: 60%;')
+                .progress.progress-striped.progress-warning.active
+                  .bar(style='width: 60%;')
+                .progress.progress-striped.progress-danger.active
+                  .bar(style='width: 60%;')
+                pre.prettyprint.linenums.
+                  \n
+                .progress
+                  .bar.bar-success(style='width: 35%;')
+                  .bar.bar-warning(style='width: 20%;')
+                  .bar.bar-danger(style='width: 10%;')
+                pre.prettyprint.linenums.
+                  \n
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-hand-right
+                h5 Pop-up dialogs
+              .widget-content
+                a.btn.btn-success(href='#myModal', data-toggle='modal') View Popup
+                a.btn.btn-warning(href='#myAlert', data-toggle='modal') Alert
+                a.btn.btn-info(href='#myModal2', data-toggle='modal') image Popup
+                #myModal.modal.hide
+                  .modal-header
+                    button.close(data-dismiss='modal', type='button') ×
+                    h3 Pop up Header
+                  .modal-body
+                    p Here is the text coming you can put also image if you want…
+                #myModal2.modal.hide
+                  .modal-header
+                    button.close(data-dismiss='modal', type='button') ×
+                    h3 Alert modal
+                  .modal-body
+                    p
+                      img(src='images/gallery/imgbox3.jpg')
+                  .modal-footer
+                    a.btn.btn-inverse(data-dismiss='modal', href='#') Cancel
+                #myAlert.modal.hide
+                  .modal-header
+                    button.close(data-dismiss='modal', type='button') ×
+                    h3 Alert modal
+                  .modal-body
+                    p Lorem ipsum dolor sit amet...
+                  .modal-footer
+                    a.btn.btn-primary(data-dismiss='modal', href='#') Confirm
+                    a.btn(data-dismiss='modal', href='#') Cancel
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-hand-right
+                h5 Tooltip directions
+              .widget-content
+                p
+                  | Four directions of the tooltips, just add a class: 'tip-top', 'tip-bottom', 'tip-left' or 'tip-right' without quotes to the element you want to have tooltip.
+                p
+                  button.btn.tip-top(data-original-title='Tooltip in top') Top
+                  button.btn.tip-left(data-original-title='Tooltip in left') Left
+                  button.btn.tip-right(data-original-title='Tooltip in right') Right
+                  button.btn.tip-bottom(data-original-title='Tooltip in bottom') Bottom
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-hand-right
+                h5 Pagination
+              .widget-content
+                h3 Default pagination
+                .pagination
+                  ul
+                    li
+                      a(href='#') Prev
+                    li.active
+                      a(href='#') 1
+                    li
+                      a(href='#') 2
+                    li
+                      a(href='#') 3
+                    li
+                      a(href='#') 4
+                    li
+                      a(href='#') Next
+                h3 Alternate pagination
+                code <div class="pagination alternate">
+                .pagination.alternate
+                  ul
+                    li.disabled
+                      a(href='#') Prev
+                    li.active
+                      a(href='#') 1
+                    li
+                      a(href='#') 2
+                    li
+                      a(href='#') 3
+                    li
+                      a(href='#') 4
+                    li
+                      a(href='#') Next
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-hand-right
+                h5 Typography
+              .widget-content
+                .bs-docs-example
+                  h1 h1. Heading 1
+                  h2 h2. Heading 2
+                  h3 h3. Heading 3
+                  h4 h4. Heading 4
+                  h5 h5. Heading 5
+                  h6 h6. Heading 6
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-hand-right
+                h5 Popover Option
+              .widget-content
+                ul.bs-docs-tooltip-examples
+                  li
+                    a#example.btn.btn-success(title='', data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.', data-placement='top', data-toggle='popover', href='', data-original-title='Popover on top') Popover on top
+                  li
+                    a#example2.btn.btn-success(title='', data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.', data-placement='right', data-toggle='popover', href='', data-original-title='Popover on right') Popover on right
+                  li
+                    a#example3.btn.btn-success(title='', data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.', data-placement='bottom', data-toggle='popover', href='', data-original-title='Popover on bottom') Popover on bottom
+                  li
+                    a#example4.btn.btn-success(title='', data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.', data-placement='left', data-toggle='popover', href='', data-original-title='Popover on left') Popover on left
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-hand-right
+                h5 Notifications
+              .widget-content
+                .alert.alert-block
+                  a.close(data-dismiss='alert', href='#') ×
+                  h4.alert-heading Warning!
+                  |               You're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                .alert.alert-success.alert-block
+                  a.close(data-dismiss='alert', href='#') ×
+                  h4.alert-heading Success!
+                  |               Tou're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                .alert.alert-info.alert-block
+                  a.close(data-dismiss='alert', href='#') ×
+                  h4.alert-heading Info!
+                  |               Tou're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                .alert.alert-error.alert-block
+                  a.close(data-dismiss='alert', href='#') ×
+                  h4.alert-heading Error!
+                  |               You're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                .alert
+                  button.close(data-dismiss='alert') ×
+                  strong Warning!
+                  |  Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                .alert.alert-success
+                  button.close(data-dismiss='alert') ×
+                  strong Success!
+                  |  Libero, a pharetra augue. Praesent commodo
+                .alert.alert-info
+                  button.close(data-dismiss='alert') ×
+                  strong Info!
+                  |  you're not looking too good.
+                .alert.alert-error
+                  button.close(data-dismiss='alert') ×
+                  strong Error!
+                  |  Nulla vitae elit libero, a pharetra augue. Praesent commodo
+    // end-main-container-part
+    // Footer-part
+    .row-fluid
+      #footer.span12
+        | 2013 © Matrix Admin. Brought to you by
+        a(href='http://themedesigner.in') Themedesigner.in
+    // End-Footer-part
+    script(src='js/jquery.min.js')
+    script(src='js/jquery.ui.custom.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/jquery.gritter.min.js')
+    script(src='js/jquery.peity.min.js')
+    script(src='js/matrix.js')
+    script(src='js/matrix.interface.js')
+    script(src='js/matrix.popover.js')

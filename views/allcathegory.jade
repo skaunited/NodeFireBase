@@ -1,0 +1,150 @@
+doctype html
+html(lang='en')
+  head
+    title Yallah Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/uniform.css')
+    link(rel='stylesheet', href='css/select2.css')
+    link(rel='stylesheet', href='css/matrix-style.css')
+    link(rel='stylesheet', href='css/matrix-media.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    // Header-part
+    #header
+      h1
+        a(href='dashboard.html') Matrix Admin
+    // close-Header-part
+    // top-Header-menu
+    #user-nav.navbar.navbar-inverse
+      ul.nav
+        li#profile-messages.dropdown
+          a.dropdown-toggle(title='', href='#', data-toggle='dropdown', data-target='#profile-messages')
+            i.icon.icon-user
+            span.text Welcome User
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='#')
+                i.icon-user
+                |  My Profile
+            li.divider
+            li
+              a(href='#')
+                i.icon-check
+                |  My Tasks
+            li.divider
+            li
+              a(href='login.html')
+                i.icon-key
+                |  Log Out
+        li
+          a(title='', href='/logout')
+            i.icon.icon-share-alt
+            span.text Logout
+    // start-top-serch
+    #search
+      input(type='text', placeholder='Search here...')
+      button.tip-bottom(type='submit', title='Search')
+        i.icon-search.icon-white
+    // close-top-serch
+    // sidebar-menu
+    #sidebar
+      a.visible-phone(href='#')
+        i.icon.icon-home
+        |  Dashboard
+        ul
+          li
+            a(href='/home')
+              i.icon.icon-home
+              span Dashboard
+          li
+            a(href='pendings')
+              i.icon.icon-tasks
+              span Pending Events
+          li
+            a(href='validevents')
+              i.icon.icon-ok-sign
+              span Valid Events
+          li
+            a(href='category')
+              i.icon.icon-sitemap
+              span All Category
+          li
+            a(href='allusers')
+              i.icon.icon-group
+              span Users
+    #content
+      #content-header
+        #breadcrumb
+          a.tip-bottom(href='#', title='Go to Home')
+            i.icon-home
+            |  Home
+          a.current(href='#') Tables
+        h1 All Category
+      .container-fluid
+        hr
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-th
+                h5 Data table
+              .widget-content.nopadding
+                table.table.table-bordered.data-table
+                  thead
+                    tr
+                      th Index
+                      th Picture
+                      th Name
+                      th Action
+                  tbody
+                    each val in cathegorysCount
+                      tr.gradeU
+                        td #{val.index}
+                        td
+                          img(src='#{val.photoUrl}', alt='Category without cover picture', height='84', width='84')
+                        td #{val.name}
+                        td
+                          a(href='http://37.59.19.10:1111/deleteCategory?categoryID=#{val.id}')
+                            button.btn.btn-danger.btn-mini Delete Category
+          .span6
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-align-justify
+                h5 Add Category
+              .widget-content.nopadding
+                form.form-horizontal(action='http://37.59.19.10:1111/addCat', method='get')
+                  .control-group
+                    label.control-label Category INDEX :
+                    .controls
+                      input.span11(type='text', placeholder='index', name='categoryIndex')
+                  .control-group
+                    label.control-label Category Name :
+                    .controls
+                      input.span11(type='text', placeholder='Category name', name='categoryName')
+                  .control-group
+                    label.control-label Picture URL :
+                    .controls
+                      input.span11(type='text', placeholder='Picture URL',name='categoryPictureURL')
+                  .form-actions
+                    button.btn.btn-success(type='submit') ADD Category
+    // Footer-part
+    .row-fluid
+      #footer.span12
+        | 2017 © Yallah Admin. Brought to you by
+        a(href='mailto:skander.bahri@hotmail.com?Subject=Hello%20skander') Skander bahri
+    // end-Footer-part
+    script(src='js/jquery.min.js')
+    script(src='js/jquery.ui.custom.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/jquery.uniform.js')
+    script(src='js/select2.min.js')
+    script(src='js/jquery.dataTables.min.js')
+    script(src='js/matrix.js')
+    script(src='js/matrix.tables.js')

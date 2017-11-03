@@ -1,0 +1,408 @@
+doctype html
+html(lang='en')
+  head
+    title Matrix Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/matrix-style.css')
+    link(rel='stylesheet', href='css/matrix-media.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    // Header-part
+    #header
+      h1
+        a(href='dashboard.html') Matrix Admin
+    // close-Header-part
+    // top-Header-menu
+    #user-nav.navbar.navbar-inverse
+      ul.nav
+        li#profile-messages.dropdown
+          a.dropdown-toggle(title='', href='#', data-toggle='dropdown', data-target='#profile-messages')
+            i.icon.icon-user
+            span.text Welcome User
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='#')
+                i.icon-user
+                |  My Profile
+            li.divider
+            li
+              a(href='#')
+                i.icon-check
+                |  My Tasks
+            li.divider
+            li
+              a(href='login.html')
+                i.icon-key
+                |  Log Out
+        li#menu-messages.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown', data-target='#menu-messages')
+            i.icon.icon-envelope
+            span.text Messages
+            span.label.label-important 5
+            b.caret
+          ul.dropdown-menu
+            li
+              a.sAdd(title='', href='#')
+                i.icon-plus
+                |  new message
+            li.divider
+            li
+              a.sInbox(title='', href='#')
+                i.icon-envelope
+                |  inbox
+            li.divider
+            li
+              a.sOutbox(title='', href='#')
+                i.icon-arrow-up
+                |  outbox
+            li.divider
+            li
+              a.sTrash(title='', href='#')
+                i.icon-trash
+                |  trash
+        li
+          a(title='', href='#')
+            i.icon.icon-cog
+            span.text Settings
+        li
+          a(title='', href='login.html')
+            i.icon.icon-share-alt
+            span.text Logout
+    // start-top-serch
+    #search
+      input(type='text', placeholder='Search here...')
+      button.tip-bottom(type='submit', title='Search')
+        i.icon-search.icon-white
+    // close-top-serch
+    // sidebar-menu
+    #sidebar
+      a.visible-phone(href='#')
+        i.icon.icon-home
+        |  Dashboard
+      ul
+        li.active
+          a(href='index')
+            i.icon.icon-home
+            span Dashboard
+        li
+          a(href='charts')
+            i.icon.icon-signal
+            span Charts & graphs
+        li
+          a(href='widgets')
+            i.icon.icon-inbox
+            span Widgets
+        li
+          a(href='tables')
+            i.icon.icon-th
+            span Tables
+        li
+          a(href='grid')
+            i.icon.icon-fullscreen
+            span Full width
+        li.submenu
+          a(href='#')
+            i.icon.icon-th-list
+            span Forms
+            span.label.label-important 3
+          ul
+            li
+              a(href='form-common') Basic Form
+            li
+              a(href='form-validation') Form with Validation
+            li
+              a(href='form-wizard') Form with Wizard
+        li
+          a(href='buttons')
+            i.icon.icon-tint
+            span Buttons & icons
+        li
+          a(href='interface')
+            i.icon.icon-pencil
+            span Eelements
+        li.submenu
+          a(href='#')
+            i.icon.icon-file
+            span Addons
+            span.label.label-important 5
+          ul
+            li
+              a(href='index2') Dashboard2
+            li
+              a(href='gallery') Gallery
+            li
+              a(href='calendar') Calendar
+            li
+              a(href='invoice') Invoice
+            li
+              a(href='chat') Chat option
+        li.submenu
+          a(href='#')
+            i.icon.icon-info-sign
+            span Error
+            span.label.label-important 4
+          ul
+            li
+              a(href='error403') Error 403
+            li
+              a(href='error404') Error 404
+            li
+              a(href='error405') Error 405
+            li
+              a(href='error500') Error 500
+        li.content
+          span Monthly Bandwidth Transfer
+          .progress.progress-mini.progress-danger.active.progress-striped
+            .bar(style='width: 77%;')
+          span.percent 77%
+          .stat 21419.94 / 14000 MB
+        li.content
+          span Disk Space Usage
+          .progress.progress-mini.active.progress-striped
+            .bar(style='width: 87%;')
+          span.percent 87%
+          .stat 604.44 / 4000 MB
+    #content
+      #content-header
+        #breadcrumb
+          a.tip-bottom(href='#', title='Go to Home')
+            i.icon-home
+            |  Home
+          a.current(href='#') Charts & graphs
+        h1 Charts & graphs
+      .container-fluid
+        hr
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-signal
+                h5 Real Time chart
+              .widget-content
+                #placeholder2
+                p
+                  | Time between updates:
+                  input#updateInterval(type='text', value='', style='text-align: right; width:5em')
+                  |               milliseconds
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-signal
+                h5 Turning-series chart
+              .widget-content
+                #placeholder
+                p#choices
+        .widget-box.widget-plain
+          .center
+            ul.stat-boxes2
+              li
+                .left.peity_bar_neutral
+                  span
+                    span(style='display: none;') 2,4,9,7,12,10,12
+                    canvas(width='50', height='24')
+                  | +10%
+                .right
+                  strong 15598
+                  |  Visits
+              li
+                .left.peity_line_neutral
+                  span
+                    span(style='display: none;') 10,15,8,14,13,10,10,15
+                    canvas(width='50', height='24')
+                  | 10%
+                .right
+                  strong 150
+                  |  New Users
+              li
+                .left.peity_bar_bad
+                  span
+                    span(style='display: none;') 3,5,6,16,8,10,6
+                    canvas(width='50', height='24')
+                  | -40%
+                .right
+                  strong 4560
+                  |  Orders
+              li
+                .left.peity_line_good
+                  span
+                    span(style='display: none;') 12,6,9,23,14,10,17
+                    canvas(width='50', height='24')
+                  | +60%
+                .right
+                  strong 5672
+                  |  Active Users
+              li
+                .left.peity_bar_good
+                  span 12,6,9,23,14,10,13
+                  | +30%
+                .right
+                  strong 2560
+                  |  Register
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-signal
+                h5 Bar chart
+              .widget-content
+                .chart
+        .row-fluid
+          .span6
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-signal
+                h5 Pie chart
+              .widget-content
+                .pie
+          .span6
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-signal
+                h5 Line chart
+              .widget-content
+                .bars
+    // Footer-part
+    .row-fluid
+      #footer.span12
+        | 2013 © Matrix Admin. Brought to you by
+        a(href='http://themedesigner.in') Themedesigner.in
+    // end-Footer-part
+    script(src='js/jquery.min.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/jquery.flot.min.js')
+    script(src='js/jquery.flot.pie.min.js')
+    script(src='js/matrix.charts.js')
+    script(src='js/jquery.flot.resize.min.js')
+    script(src='js/matrix.js')
+    script(src='js/jquery.peity.min.js')
+    // Real-time-chart-js
+    script(type='text/javascript').
+      $(function () {
+      // we use an inline data source in the example, usually data would
+      // be fetched from a server
+      var data = [], totalPoints = 300;
+      function getRandomData() {
+      if (data.length > 0)
+      data = data.slice(1);
+      // do a random walk
+      while (data.length < totalPoints) {
+      var prev = data.length > 0 ? data[data.length - 1] : 50;
+      var y = prev + Math.random() * 10 - 5;
+      if (y < 0)
+      y = 0;
+      if (y > 100)
+      y = 100;
+      data.push(y);
+      }
+      // zip the generated y values with the x values
+      var res = [];
+      for (var i = 0; i < data.length; ++i)
+      res.push([i, data[i]])
+      return res;
+      }
+      // setup control widget
+      var updateInterval = 30;
+      $("#updateInterval").val(updateInterval).change(function () {
+      var v = $(this).val();
+      if (v && !isNaN(+v)) {
+      updateInterval = +v;
+      if (updateInterval < 1)
+      updateInterval = 1;
+      if (updateInterval > 2000)
+      updateInterval = 2000;
+      $(this).val("" + updateInterval);
+      }
+      });
+      // setup plot
+      var options = {
+      series: { shadowSize: 0 }, // drawing is faster without shadows
+      yaxis: { min: 0, max: 100 },
+      xaxis: { show: false }
+      };
+      var plot = $.plot($("#placeholder2"), [ getRandomData() ], options);
+      function update() {
+      plot.setData([ getRandomData() ]);
+      // since the axes don't change, we don't need to call plot.setupGrid()
+      plot.draw();
+      setTimeout(update, updateInterval);
+      }
+      update();
+      });
+    // Real-time-chart-js-end
+    // Turning-series-chart-js
+    script(type='text/javascript').
+      $(function () {
+      var datasets = {
+      "usa": {
+      label: "USA",
+      data: [[1988, 483994], [1989, 479060], [1990, 457648], [1991, 401949], [1992, 424705], [1993, 402375], [1994, 377867], [1995, 357382], [1996, 337946], [1997, 336185], [1998, 328611], [1999, 329421], [2000, 342172], [2001, 344932], [2002, 387303], [2003, 440813], [2004, 480451], [2005, 504638], [2006, 528692]]
+      },
+      "russia": {
+      label: "Russia",
+      data: [[1988, 218000], [1989, 203000], [1990, 171000], [1992, 42500], [1993, 37600], [1994, 36600], [1995, 21700], [1996, 19200], [1997, 21300], [1998, 13600], [1999, 14000], [2000, 19100], [2001, 21300], [2002, 23600], [2003, 25100], [2004, 26100], [2005, 31100], [2006, 34700]]
+      },
+      "uk": {
+      label: "UK",
+      data: [[1988, 62982], [1989, 62027], [1990, 60696], [1991, 62348], [1992, 58560], [1993, 56393], [1994, 54579], [1995, 50818], [1996, 50554], [1997, 48276], [1998, 47691], [1999, 47529], [2000, 47778], [2001, 48760], [2002, 50949], [2003, 57452], [2004, 60234], [2005, 60076], [2006, 59213]]
+      },
+      "germany": {
+      label: "Germany",
+      data: [[1988, 55627], [1989, 55475], [1990, 58464], [1991, 55134], [1992, 52436], [1993, 47139], [1994, 43962], [1995, 43238], [1996, 42395], [1997, 40854], [1998, 40993], [1999, 41822], [2000, 41147], [2001, 40474], [2002, 40604], [2003, 40044], [2004, 38816], [2005, 38060], [2006, 36984]]
+      },
+      "denmark": {
+      label: "Denmark",
+      data: [[1988, 3813], [1989, 3719], [1990, 3722], [1991, 3789], [1992, 3720], [1993, 3730], [1994, 3636], [1995, 3598], [1996, 3610], [1997, 3655], [1998, 3695], [1999, 3673], [2000, 3553], [2001, 3774], [2002, 3728], [2003, 3618], [2004, 3638], [2005, 3467], [2006, 3770]]
+      },
+      "sweden": {
+      label: "Sweden",
+      data: [[1988, 6402], [1989, 6474], [1990, 6605], [1991, 6209], [1992, 6035], [1993, 6020], [1994, 6000], [1995, 6018], [1996, 3958], [1997, 5780], [1998, 5954], [1999, 6178], [2000, 6411], [2001, 5993], [2002, 5833], [2003, 5791], [2004, 5450], [2005, 5521], [2006, 5271]]
+      },
+      "norway": {
+      label: "Norway",
+      data: [[1988, 4382], [1989, 4498], [1990, 4535], [1991, 4398], [1992, 4766], [1993, 4441], [1994, 4670], [1995, 4217], [1996, 4275], [1997, 4203], [1998, 4482], [1999, 4506], [2000, 4358], [2001, 4385], [2002, 5269], [2003, 5066], [2004, 5194], [2005, 4887], [2006, 4891]]
+      }
+      };
+      // hard-code color indices to prevent them from shifting as
+      // countries are turned on/off
+      var i = 0;
+      $.each(datasets, function(key, val) {
+      val.color = i;
+      ++i;
+      });
+      // insert checkboxes
+      var choiceContainer = $("#choices");
+      $.each(datasets, function(key, val) {
+      choiceContainer.append('<br/><input type="checkbox" name="' + key +
+      '" checked="checked" id="id' + key + '">' +
+      '<label for="id' + key + '">'
+      + val.label + '</label>');
+      });
+      choiceContainer.find("input").click(plotAccordingToChoices);
+      function plotAccordingToChoices() {
+      var data = [];
+      choiceContainer.find("input:checked").each(function () {
+      var key = $(this).attr("name");
+      if (key && datasets[key])
+      data.push(datasets[key]);
+      });
+      if (data.length > 0)
+      $.plot($("#placeholder"), data, {
+      yaxis: { min: 0 },
+      xaxis: { tickDecimals: 0 }
+      });
+      }
+      plotAccordingToChoices();
+      });
+    // Turning-series-chart-js
+    script(src='js/matrix.dashboard.js')

@@ -1,0 +1,709 @@
+doctype html
+html(lang='en')
+  head
+    title Matrix Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/uniform.css')
+    link(rel='stylesheet', href='css/select2.css')
+    link(rel='stylesheet', href='css/matrix-style.css')
+    link(rel='stylesheet', href='css/matrix-media.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    // Header-part
+    #header
+      h1
+        a(href='dashboard.html') Matrix Admin
+    // close-Header-part
+    // top-Header-menu
+    #user-nav.navbar.navbar-inverse
+      ul.nav
+        li#profile-messages.dropdown
+          a.dropdown-toggle(title='', href='#', data-toggle='dropdown', data-target='#profile-messages')
+            i.icon.icon-user
+            span.text Welcome User
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='#')
+                i.icon-user
+                |  My Profile
+            li.divider
+            li
+              a(href='#')
+                i.icon-check
+                |  My Tasks
+            li.divider
+            li
+              a(href='login.html')
+                i.icon-key
+                |  Log Out
+        li#menu-messages.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown', data-target='#menu-messages')
+            i.icon.icon-envelope
+            span.text Messages
+            span.label.label-important 5
+            b.caret
+          ul.dropdown-menu
+            li
+              a.sAdd(title='', href='#')
+                i.icon-plus
+                |  new message
+            li.divider
+            li
+              a.sInbox(title='', href='#')
+                i.icon-envelope
+                |  inbox
+            li.divider
+            li
+              a.sOutbox(title='', href='#')
+                i.icon-arrow-up
+                |  outbox
+            li.divider
+            li
+              a.sTrash(title='', href='#')
+                i.icon-trash
+                |  trash
+        li
+          a(title='', href='#')
+            i.icon.icon-cog
+            span.text Settings
+        li
+          a(title='', href='login.html')
+            i.icon.icon-share-alt
+            span.text Logout
+    // start-top-serch
+    #search
+      input(type='text', placeholder='Search here...')
+      button.tip-bottom(type='submit', title='Search')
+        i.icon-search.icon-white
+    // close-top-serch
+    // sidebar-menu
+    #sidebar
+      a.visible-phone(href='#')
+        i.icon.icon-home
+        |  Dashboard
+      ul
+        li.active
+          a(href='index')
+            i.icon.icon-home
+            span Dashboard
+        li
+          a(href='charts')
+            i.icon.icon-signal
+            span Charts & graphs
+        li
+          a(href='widgets')
+            i.icon.icon-inbox
+            span Widgets
+        li
+          a(href='tables')
+            i.icon.icon-th
+            span Tables
+        li
+          a(href='grid')
+            i.icon.icon-fullscreen
+            span Full width
+        li.submenu
+          a(href='#')
+            i.icon.icon-th-list
+            span Forms
+            span.label.label-important 3
+          ul
+            li
+              a(href='form-common') Basic Form
+            li
+              a(href='form-validation') Form with Validation
+            li
+              a(href='form-wizard') Form with Wizard
+        li
+          a(href='buttons')
+            i.icon.icon-tint
+            span Buttons & icons
+        li
+          a(href='interface')
+            i.icon.icon-pencil
+            span Eelements
+        li.submenu
+          a(href='#')
+            i.icon.icon-file
+            span Addons
+            span.label.label-important 5
+          ul
+            li
+              a(href='index2') Dashboard2
+            li
+              a(href='gallery') Gallery
+            li
+              a(href='calendar') Calendar
+            li
+              a(href='invoice') Invoice
+            li
+              a(href='chat') Chat option
+        li.submenu
+          a(href='#')
+            i.icon.icon-info-sign
+            span Error
+            span.label.label-important 4
+          ul
+            li
+              a(href='error403') Error 403
+            li
+              a(href='error404') Error 404
+            li
+              a(href='error405') Error 405
+            li
+              a(href='error500') Error 500
+        li.content
+          span Monthly Bandwidth Transfer
+          .progress.progress-mini.progress-danger.active.progress-striped
+            .bar(style='width: 77%;')
+          span.percent 77%
+          .stat 21419.94 / 14000 MB
+        li.content
+          span Disk Space Usage
+          .progress.progress-mini.active.progress-striped
+            .bar(style='width: 87%;')
+          span.percent 87%
+          .stat 604.44 / 4000 MB
+    #content
+      #content-header
+        #breadcrumb
+          a.tip-bottom(href='#', title='Go to Home')
+            i.icon-home
+            |  Home
+          a.current(href='#') Tables
+        h1 Tables
+      .container-fluid
+        hr
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-th
+                h5 Static table
+              .widget-content.nopadding
+                table.table.table-bordered.table-striped
+                  thead
+                    tr
+                      th Rendering engine
+                      th Browser
+                      th Platform(s)
+                      th Engine version
+                      th CSS grade
+                  tbody
+                    tr.odd.gradeX
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 4.0
+                      td Win 95+
+                      td.center  4
+                      td.center X
+                    tr.even.gradeC
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 5.0
+                      td Win 95+
+                      td.center 5
+                      td.center C
+                    tr.odd.gradeA
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 5.5
+                      td Win 95+
+                      td.center 5.5
+                      td.center A
+                    tr.even.gradeA
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 6
+                      td Win 98+
+                      td.center 6
+                      td.center A
+            .widget-box
+              .widget-title
+                span.icon
+                  input#title-checkbox(type='checkbox', name='title-checkbox')
+                h5 Static table with checkboxes
+              .widget-content.nopadding
+                table.table.table-bordered.table-striped.with-check
+                  thead
+                    tr
+                      th
+                        i.icon-resize-vertical
+                      th Rendering engine
+                      th Browser
+                      th Platform(s)
+                      th Engine version
+                  tbody
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 4.0
+                      td Win 95+
+                      td.center  4
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 5.0
+                      td Win 95+
+                      td.center 5
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 4.0
+                      td Win 95+
+                      td.center  4
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 5.0
+                      td Win 95+
+                      td.center 5
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 5.5
+                      td Win 95+
+                      td.center 5.5
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 6
+                      td Win 98+
+                      td.center 6
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-th
+                h5 Static table with checkboxes in box with padding
+                span.label.label-info Featured
+              .widget-content
+                table.table.table-bordered.table-striped.with-check
+                  thead
+                    tr
+                      th
+                        input#title-table-checkbox(type='checkbox', name='title-table-checkbox')
+                      th Column name
+                      th Column name
+                      th Column name
+                      th Column name
+                  tbody
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Row 1
+                      td Row 2
+                      td Row 3
+                      td Row 4
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Row 1
+                      td Row 2
+                      td Row 3
+                      td Row 4
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Row 1
+                      td Row 2
+                      td Row 3
+                      td Row 4
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Row 1
+                      td Row 2
+                      td Row 3
+                      td Row 4
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Row 1
+                      td Row 2
+                      td Row 3
+                      td Row 4
+                    tr
+                      td
+                        input(type='checkbox')
+                      td Row 1
+                      td Row 2
+                      td Row 3
+                      td Row 4
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-th
+                h5 Collspan Table Example
+                span.label.label-info Featured
+              .widget-content.nopadding
+                table.table.table-bordered.table-striped
+                  thead
+                    tr
+                      th #
+                      th Name
+                      th Last Name
+                      th Username
+                  tbody
+                    tr
+                      td 1
+                      td steave
+                      td marki
+                      td @hahas
+                    tr
+                      td 2
+                      td john
+                      td deo
+                      td @john
+                    tr
+                      td 3
+                      td(colspan='2') collspan text
+                      td @twitter
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-th
+                h5 Data table
+              .widget-content.nopadding
+                table.table.table-bordered.data-table
+                  thead
+                    tr
+                      th Rendering engine
+                      th Browser
+                      th Platform(s)
+                      th Engine version
+                  tbody
+                    tr.gradeX
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 4.0
+                      td Win 95+
+                      td.center 4
+                    tr.gradeC
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 5.0
+                      td Win 95+
+                      td.center 5
+                    tr.gradeA
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 5.5
+                      td Win 95+
+                      td.center 5.5
+                    tr.gradeA
+                      td Trident
+                      td
+                        | Internet
+                        | Explorer 6
+                      td Win 98+
+                      td.center 6
+                    tr.gradeA
+                      td Trident
+                      td Internet Explorer 7
+                      td Win XP SP2+
+                      td.center 7
+                    tr.gradeA
+                      td Trident
+                      td AOL browser (AOL desktop)
+                      td Win XP
+                      td.center 6
+                    tr.gradeA
+                      td Gecko
+                      td Firefox 1.0
+                      td Win 98+ / OSX.2+
+                      td.center 1.7
+                    tr.gradeA
+                      td Gecko
+                      td Firefox 1.5
+                      td Win 98+ / OSX.2+
+                      td.center 1.8
+                    tr.gradeA
+                      td Gecko
+                      td Firefox 2.0
+                      td Win 98+ / OSX.2+
+                      td.center 1.8
+                    tr.gradeA
+                      td Gecko
+                      td Firefox 3.0
+                      td Win 2k+ / OSX.3+
+                      td.center 1.9
+                    tr.gradeA
+                      td Gecko
+                      td Camino 1.0
+                      td OSX.2+
+                      td.center 1.8
+                    tr.gradeA
+                      td Gecko
+                      td Camino 1.5
+                      td OSX.3+
+                      td.center 1.8
+                    tr.gradeA
+                      td Gecko
+                      td Netscape 7.2
+                      td Win 95+ / Mac OS 8.6-9.2
+                      td.center 1.7
+                    tr.gradeA
+                      td Gecko
+                      td Netscape Browser 8
+                      td Win 98SE+
+                      td.center 1.7
+                    tr.gradeA
+                      td Gecko
+                      td Netscape Navigator 9
+                      td Win 98+ / OSX.2+
+                      td.center 1.8
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.0
+                      td Win 95+ / OSX.1+
+                      td.center 1
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.1
+                      td Win 95+ / OSX.1+
+                      td.center 1.1
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.2
+                      td Win 95+ / OSX.1+
+                      td.center 1.2
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.3
+                      td Win 95+ / OSX.1+
+                      td.center 1.3
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.4
+                      td Win 95+ / OSX.1+
+                      td.center 1.4
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.5
+                      td Win 95+ / OSX.1+
+                      td.center 1.5
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.6
+                      td Win 95+ / OSX.1+
+                      td.center 1.6
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.7
+                      td Win 98+ / OSX.1+
+                      td.center 1.7
+                    tr.gradeA
+                      td Gecko
+                      td Mozilla 1.8
+                      td Win 98+ / OSX.1+
+                      td.center 1.8
+                    tr.gradeA
+                      td Gecko
+                      td Seamonkey 1.1
+                      td Win 98+ / OSX.2+
+                      td.center 1.8
+                    tr.gradeA
+                      td Gecko
+                      td Epiphany 2.20
+                      td Gnome
+                      td.center 1.8
+                    tr.gradeA
+                      td Webkit
+                      td Safari 1.2
+                      td OSX.3
+                      td.center 125.5
+                    tr.gradeA
+                      td Webkit
+                      td Safari 1.3
+                      td OSX.3
+                      td.center 312.8
+                    tr.gradeA
+                      td Webkit
+                      td Safari 2.0
+                      td OSX.4+
+                      td.center 419.3
+                    tr.gradeA
+                      td Webkit
+                      td Safari 3.0
+                      td OSX.4+
+                      td.center 522.1
+                    tr.gradeA
+                      td Webkit
+                      td OmniWeb 5.5
+                      td OSX.4+
+                      td.center 420
+                    tr.gradeA
+                      td Webkit
+                      td iPod Touch / iPhone
+                      td iPod
+                      td.center 420.1
+                    tr.gradeA
+                      td Webkit
+                      td S60
+                      td S60
+                      td.center 413
+                    tr.gradeA
+                      td Presto
+                      td Opera 7.0
+                      td Win 95+ / OSX.1+
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Opera 7.5
+                      td Win 95+ / OSX.2+
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Opera 8.0
+                      td Win 95+ / OSX.2+
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Opera 8.5
+                      td Win 95+ / OSX.2+
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Opera 9.0
+                      td Win 95+ / OSX.3+
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Opera 9.2
+                      td Win 88+ / OSX.3+
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Opera 9.5
+                      td Win 88+ / OSX.3+
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Opera for Wii
+                      td Wii
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Nokia N800
+                      td N800
+                      td.center -
+                    tr.gradeA
+                      td Presto
+                      td Nintendo DS browser
+                      td Nintendo DS
+                      td.center 8.5
+                    tr.gradeC
+                      td KHTML
+                      td Konqureror 3.1
+                      td KDE 3.1
+                      td.center 3.1
+                    tr.gradeA
+                      td KHTML
+                      td Konqureror 3.3
+                      td KDE 3.3
+                      td.center 3.3
+                    tr.gradeA
+                      td KHTML
+                      td Konqureror 3.5
+                      td KDE 3.5
+                      td.center 3.5
+                    tr.gradeX
+                      td Tasman
+                      td Internet Explorer 4.5
+                      td Mac OS 8-9
+                      td.center -
+                    tr.gradeC
+                      td Tasman
+                      td Internet Explorer 5.1
+                      td Mac OS 7.6-9
+                      td.center 1
+                    tr.gradeC
+                      td Tasman
+                      td Internet Explorer 5.2
+                      td Mac OS 8-X
+                      td.center 1
+                    tr.gradeA
+                      td Misc
+                      td NetFront 3.1
+                      td Embedded devices
+                      td.center -
+                    tr.gradeA
+                      td Misc
+                      td NetFront 3.4
+                      td Embedded devices
+                      td.center -
+                    tr.gradeX
+                      td Misc
+                      td Dillo 0.8
+                      td Embedded devices
+                      td.center -
+                    tr.gradeX
+                      td Misc
+                      td Links
+                      td Text only
+                      td.center -
+                    tr.gradeX
+                      td Misc
+                      td Lynx
+                      td Text only
+                      td.center -
+                    tr.gradeC
+                      td Misc
+                      td IE Mobile
+                      td Windows Mobile 6
+                      td.center -
+                    tr.gradeC
+                      td Misc
+                      td PSP browser
+                      td PSP
+                      td.center -
+                    tr.gradeU
+                      td Other browsers
+                      td All others
+                      td -
+                      td.center -
+    // Footer-part
+    .row-fluid
+      #footer.span12
+        | 2013 © Matrix Admin. Brought to you by
+        a(href='http://themedesigner.in') Themedesigner.in
+    // end-Footer-part
+    script(src='js/jquery.min.js')
+    script(src='js/jquery.ui.custom.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/jquery.uniform.js')
+    script(src='js/select2.min.js')
+    script(src='js/jquery.dataTables.min.js')
+    script(src='js/matrix.js')
+    script(src='js/matrix.tables.js')

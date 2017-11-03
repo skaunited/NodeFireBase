@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+  head
+    title Yallah Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/matrix-login.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    #loginbox
+      form#loginform.form-vertical(action='http://37.59.19.10:1111/gologin', method='get')
+        .control-group.normal_text
+          h3
+            img(src='img/nodelogo.png', alt='Logo')
+        .control-group
+          .controls
+            .main_input_box
+              span.add-on.bg_lg
+                i.icon-user
+              input(type='text', placeholder='E-mail', name='email')
+        .control-group
+          .controls
+            .main_input_box
+              span.add-on.bg_ly
+                i.icon-lock
+              input(type='password', placeholder='Password', name='pass')
+        span.pull-right.form-actions
+          button.btn.btn-success(type='submit')  Login
+      form#recoverform.form-vertical(action='#')
+        p.normal_text
+          | Enter your e-mail address below and we will send you instructions how to recover a password.
+        .controls
+          .main_input_box
+            span.add-on.bg_lo
+              i.icon-envelope
+            input(type='text', placeholder='E-mail address')
+        .form-actions
+          span.pull-left
+            a#to-login.flip-link.btn.btn-success(href='#') « Back to login
+          span.pull-right
+            a.btn.btn-info Reecover
+    script(src='js/jquery.min.js')
+    script(src='js/matrix.login.js')

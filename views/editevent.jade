@@ -1,0 +1,139 @@
+doctype html
+html(lang='en')
+  head
+    title Yallah Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/uniform.css')
+    link(rel='stylesheet', href='css/select2.css')
+    link(rel='stylesheet', href='css/matrix-style.css')
+    link(rel='stylesheet', href='css/matrix-media.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    // Header-part
+    #header
+      h1
+        a(href='dashboard.html') Matrix Admin
+    // close-Header-part
+    // top-Header-menu
+    #user-nav.navbar.navbar-inverse
+      ul.nav
+        li#profile-messages.dropdown
+          a.dropdown-toggle(title='', href='#', data-toggle='dropdown', data-target='#profile-messages')
+            i.icon.icon-user
+            span.text Welcome User
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='#')
+                i.icon-user
+                |  My Profile
+            li.divider
+            li
+              a(href='#')
+                i.icon-check
+                |  My Tasks
+            li.divider
+            li
+              a(href='login.html')
+                i.icon-key
+                |  Log Out
+        li
+          a(title='', href='login.html')
+            i.icon.icon-share-alt
+            span.text Logout
+    // start-top-serch
+    #search
+      input(type='text', placeholder='Search here...')
+      button.tip-bottom(type='submit', title='Search')
+        i.icon-search.icon-white
+    // close-top-serch
+    // sidebar-menu
+    #sidebar
+      a.visible-phone(href='#')
+        i.icon.icon-home
+        |  Dashboard
+        ul
+          li
+            a(href='/')
+              i.icon.icon-home
+              span Dashboard
+          li
+            a(href='pendings')
+              i.icon.icon-tasks
+              span Pending Events
+          li
+            a(href='validevents')
+              i.icon.icon-ok-sign
+              span Valid Events
+          li
+            a(href='category')
+              i.icon.icon-sitemap
+              span All Category
+          li
+            a(href='allusers')
+              i.icon.icon-group
+              span Users
+    #content
+      #content-header
+        #breadcrumb
+          a.tip-bottom(href='index.html', title='Go to Home')
+            i.icon-home
+            |  Home
+          a(href='#') Form elements
+          a.current(href='#') Validation
+        h1 Form Edit Event
+      .container-fluid
+        hr
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-info-sign
+                h5 Form Edit Event
+              .widget-content.nopadding
+                form#basic_validate.form-horizontal(method='GET', action='http://37.59.19.10:1111/validEditEvent', name='basic_validate', novalidate='novalidate')
+                  .control-group
+                    label.control-label Event ID
+                    .controls
+                      input#required(type='text', name='eventID',value='#{array.id}',readonly)
+                  .control-group
+                    label.control-label Picture URL (Start with http://)
+                    .controls
+                      input#url(type='text', name='coverUrl',value='#{array.cover}')
+                  .control-group
+                    label.control-label Event Name
+                    .controls
+                      input#required(type='text', name='eventName',value='#{array.name}')
+                  .control-group
+                    label.control-label Start Date (only Number)
+                    .controls
+                      input#date(type='text', name='startDate',value='#{array.start_time}')
+                  .control-group
+                    label.control-label Category
+                    .controls
+                      input#required(type='text', name='category',value='#{array.categorie}')
+                  .control-group
+                    label.control-label Price
+                    .controls
+                      input#required(type='text', name='price',value='#{array.price}')
+                  .form-actions
+                    input.btn.btn-success(type='submit', value='Validate')
+    // Footer-part
+    .row-fluid
+      #footer.span12
+        | 2013 © Matrix Admin. Brought to you by
+        a(href='http://themedesigner.in') Themedesigner.in
+    // end-Footer-part
+    script(src='js/jquery.min.js')
+    script(src='js/jquery.ui.custom.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/jquery.uniform.js')
+    script(src='js/select2.min.js')
+    script(src='js/jquery.validate.js')
+    script(src='js/matrix.js')
+    script(src='js/matrix.form_validation.js')

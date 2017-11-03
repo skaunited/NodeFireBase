@@ -1,0 +1,633 @@
+doctype html
+html(lang='en')
+  head
+    title Matrix Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/matrix-style.css')
+    link(rel='stylesheet', href='css/matrix-media.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    // Header-part
+    #header
+      h1
+        a(href='dashboard.html') Matrix Admin
+    // close-Header-part
+    // top-Header-menu
+    #user-nav.navbar.navbar-inverse
+      ul.nav
+        li#profile-messages.dropdown
+          a.dropdown-toggle(title='', href='#', data-toggle='dropdown', data-target='#profile-messages')
+            i.icon.icon-user
+            span.text Welcome User
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='#')
+                i.icon-user
+                |  My Profile
+            li.divider
+            li
+              a(href='#')
+                i.icon-check
+                |  My Tasks
+            li.divider
+            li
+              a(href='login.html')
+                i.icon-key
+                |  Log Out
+        li#menu-messages.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown', data-target='#menu-messages')
+            i.icon.icon-envelope
+            span.text Messages
+            span.label.label-important 5
+            b.caret
+          ul.dropdown-menu
+            li
+              a.sAdd(title='', href='#')
+                i.icon-plus
+                |  new message
+            li.divider
+            li
+              a.sInbox(title='', href='#')
+                i.icon-envelope
+                |  inbox
+            li.divider
+            li
+              a.sOutbox(title='', href='#')
+                i.icon-arrow-up
+                |  outbox
+            li.divider
+            li
+              a.sTrash(title='', href='#')
+                i.icon-trash
+                |  trash
+        li
+          a(title='', href='#')
+            i.icon.icon-cog
+            span.text Settings
+        li
+          a(title='', href='login.html')
+            i.icon.icon-share-alt
+            span.text Logout
+    // start-top-serch
+    #search
+      input(type='text', placeholder='Search here...')
+      button.tip-bottom(type='submit', title='Search')
+        i.icon-search.icon-white
+    // close-top-serch
+    // sidebar-menu
+    #sidebar
+      a.visible-phone(href='#')
+        i.icon.icon-home
+        |  Dashboard
+      ul
+        li.active
+          a(href='index')
+            i.icon.icon-home
+            span Dashboard
+        li
+          a(href='charts')
+            i.icon.icon-signal
+            span Charts & graphs
+        li
+          a(href='widgets')
+            i.icon.icon-inbox
+            span Widgets
+        li
+          a(href='tables')
+            i.icon.icon-th
+            span Tables
+        li
+          a(href='grid')
+            i.icon.icon-fullscreen
+            span Full width
+        li.submenu
+          a(href='#')
+            i.icon.icon-th-list
+            span Forms
+            span.label.label-important 3
+          ul
+            li
+              a(href='form-common') Basic Form
+            li
+              a(href='form-validation') Form with Validation
+            li
+              a(href='form-wizard') Form with Wizard
+        li
+          a(href='buttons')
+            i.icon.icon-tint
+            span Buttons & icons
+        li
+          a(href='interface')
+            i.icon.icon-pencil
+            span Eelements
+        li.submenu
+          a(href='#')
+            i.icon.icon-file
+            span Addons
+            span.label.label-important 5
+          ul
+            li
+              a(href='index2') Dashboard2
+            li
+              a(href='gallery') Gallery
+            li
+              a(href='calendar') Calendar
+            li
+              a(href='invoice') Invoice
+            li
+              a(href='chat') Chat option
+        li.submenu
+          a(href='#')
+            i.icon.icon-info-sign
+            span Error
+            span.label.label-important 4
+          ul
+            li
+              a(href='error403') Error 403
+            li
+              a(href='error404') Error 404
+            li
+              a(href='error405') Error 405
+            li
+              a(href='error500') Error 500
+        li.content
+          span Monthly Bandwidth Transfer
+          .progress.progress-mini.progress-danger.active.progress-striped
+            .bar(style='width: 77%;')
+          span.percent 77%
+          .stat 21419.94 / 14000 MB
+        li.content
+          span Disk Space Usage
+          .progress.progress-mini.active.progress-striped
+            .bar(style='width: 87%;')
+          span.percent 87%
+          .stat 604.44 / 4000 MB
+    // sidebar-menu
+    // main-container-part
+    #content
+      #content-header
+        #breadcrumb
+          a.tip-bottom(href='#', title='Go to Home')
+            i.icon-home
+            |  Home
+          a.current(href='#') Widgets
+        h1 Widgets
+      .container-fluid
+        hr
+        .row-fluid
+          .span6
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-file
+                h5 Recent Posts
+              .widget-content.nopadding
+                ul.recent-posts
+                  li
+                    .user-thumb
+                      img(width='40', height='40', alt='User', src='img/demo/av1.jpg')
+                    .article-post
+                      .fr
+                        a.btn.btn-primary.btn-mini(href='#') Edit
+                        a.btn.btn-success.btn-mini(href='#') Publish
+                        a.btn.btn-danger.btn-mini(href='#') Delete
+                      span.user-info  By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM
+                      p
+                        a(href='#')
+                          | This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.
+                  li
+                    .user-thumb
+                      img(width='40', height='40', alt='User', src='img/demo/av2.jpg')
+                    .article-post
+                      .fr
+                        a.btn.btn-primary.btn-mini(href='#') Edit
+                        a.btn.btn-success.btn-mini(href='#') Publish
+                        a.btn.btn-danger.btn-mini(href='#') Delete
+                      span.user-info  By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM
+                      p
+                        a(href='#')
+                          | This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.
+                  li
+                    .user-thumb
+                      img(width='40', height='40', alt='User', src='img/demo/av3.jpg')
+                    .article-post
+                      .fr
+                        a.btn.btn-primary.btn-mini(href='#') Edit
+                        a.btn.btn-success.btn-mini(href='#') Publish
+                        a.btn.btn-danger.btn-mini(href='#') Delete
+                      span.user-info  By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM
+                      p
+                        a(href='#')
+                          | This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.
+                  li
+                    button.btn.btn-warning.btn-mini View All
+            #collapse-group.accordion
+              .accordion-group.widget-box
+                .accordion-heading
+                  .widget-title
+                    a(data-parent='#collapse-group', href='#collapseGOne', data-toggle='collapse')
+                      span.icon
+                        i.icon-ok
+                      h5 Accordion option1
+                #collapseGOne.collapse.in.accordion-body
+                  .widget-content  This is opened by default
+              .accordion-group.widget-box
+                .accordion-heading
+                  .widget-title
+                    a(data-parent='#collapse-group', href='#collapseGTwo', data-toggle='collapse')
+                      span.icon
+                        i.icon-circle-arrow-right
+                      h5 Accordion closed
+                #collapseGTwo.collapse.accordion-body
+                  .widget-content  Another is open
+              .accordion-group.widget-box
+                .accordion-heading
+                  .widget-title
+                    a(data-parent='#collapse-group', href='#collapseGThree', data-toggle='collapse')
+                      span.icon
+                        i.icon-eye-open
+                      h5 Accordion closed
+                #collapseGThree.collapse.accordion-body
+                  .widget-content  Another is open
+            .widget-box.collapsible
+              .widget-title
+                a(href='#collapseOne', data-toggle='collapse')
+                  span.icon
+                    i.icon-arrow-right
+                  h5 Toggle, Open by default
+              #collapseOne.collapse.in
+                .widget-content  This box is opened by default
+              .widget-title
+                a(href='#collapseTwo', data-toggle='collapse')
+                  span.icon
+                    i.icon-remove
+                  h5 Toggle, closed by default
+              #collapseTwo.collapse
+                .widget-content  This box is now open
+              .widget-title
+                a(href='#collapseThree', data-toggle='collapse')
+                  span.icon
+                    i.icon-remove
+                  h5 Toggle, closed by default
+              #collapseThree.collapse
+                .widget-content  This box is now open
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-refresh
+                h5 News updates
+              .widget-content.nopadding.updates
+                .new-update.clearfix
+                  i.icon-ok-sign
+                  .update-done
+                    a(href='#', title='')
+                      strong Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    span dolor sit amet, consectetur adipiscing eli
+                  .update-date
+                    span.update-day 20
+                    | jan
+                .new-update.clearfix
+                  i.icon-gift
+                  span.update-notice
+                    a(href='#', title='')
+                      strong Congratulation Maruti, Happy Birthday
+                    span many many happy returns of the day
+                  span.update-date
+                    span.update-day 11
+                    | jan
+                .new-update.clearfix
+                  i.icon-move
+                  span.update-alert
+                    a(href='#', title='')
+                      strong Maruti is a Responsive Admin theme
+                    span But already everything was solved. It will ...
+                  span.update-date
+                    span.update-day 07
+                    | Jan
+                .new-update.clearfix
+                  i.icon-leaf
+                  span.update-done
+                    a(href='#', title='')
+                      strong Envato approved Maruti Admin template
+                    span i am very happy to approved by TF
+                  span.update-date
+                    span.update-day 05
+                    | jan
+                .new-update.clearfix
+                  i.icon-question-sign
+                  span.update-notice
+                    a(href='#', title='')
+                      strong I am alwayse here if you have any question
+                    span we glad that you choose our template
+                  span.update-date
+                    span.update-day 01
+                    | jan
+          .span6
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-time
+                h5 To Do List
+              .widget-content.nopadding
+                table.table.table-striped.table-bordered
+                  thead
+                    tr
+                      th Description
+                      th Status
+                      th Opts
+                  tbody
+                    tr
+                      td.taskDesc
+                        i.icon-info-sign
+                        |  Making The New Suit
+                      td.taskStatus
+                        span.in-progress in progress
+                      td.taskOptions
+                        a.tip-top(href='#', data-original-title='Update')
+                          i.icon-ok
+                        a.tip-top(href='#', data-original-title='Delete')
+                          i.icon-remove
+                    tr
+                      td.taskDesc
+                        i.icon-plus-sign
+                        |  Luanch My New Site
+                      td.taskStatus
+                        span.pending pending
+                      td.taskOptions
+                        a.tip-top(href='#', data-original-title='Update')
+                          i.icon-ok
+                        a.tip-top(href='#', data-original-title='Delete')
+                          i.icon-remove
+                    tr
+                      td.taskDesc
+                        i.icon-ok-sign
+                        |  Maruti Excellant Theme
+                      td.taskStatus
+                        span.done done
+                      td.taskOptions
+                        a.tip-top(href='#', data-original-title='Update')
+                          i.icon-ok
+                        a.tip-top(href='#', data-original-title='Delete')
+                          i.icon-remove
+            .widget-box
+              .widget-title
+                ul.nav.nav-tabs
+                  li.active
+                    a(data-toggle='tab', href='#tab1') Tab1
+                  li
+                    a(data-toggle='tab', href='#tab2') Tab2
+                  li
+                    a(data-toggle='tab', href='#tab3') Tab3
+              .widget-content.tab-content
+                #tab1.tab-pane.active
+                  p
+                    | And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.
+                #tab2.tab-pane
+                  p
+                    | waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.
+                #tab3.tab-pane
+                  p
+                    | full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-repeat
+                h5 Recent Activity
+              .widget-content.nopadding
+                ul.activity-list
+                  li
+                    a(href='#')
+                      i.icon-user
+                      strong Themeforest
+                      | Approved My college theme
+                      strong 1 user
+                      span 2 hours ago
+                  li
+                    a(href='#')
+                      i.icon-file
+                      strong My College is PSD Template
+                      |  Theme
+                      strong Psd Theme
+                      span 2months ago
+                  li
+                    a(href='#')
+                      i.icon-envelope
+                      strong Lorem ipsum doler set
+                      |  adag
+                      strong agg
+                      span 2 days ago
+                  li
+                    a(href='#')
+                      i.icon-picture
+                      strong ITs my First Admin
+                      |  so very
+                      strong exited
+                      span 2 days ago
+                  li
+                    a(href='#')
+                      i.icon-user
+                      strong Admin
+                      |  bans
+                      strong 3 users
+                      span week ago
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-ok
+                h5 To Do list
+              .widget-content
+                .todo
+                  ul
+                    li.clearfix
+                      .txt
+                        | Luanch This theme on Themeforest
+                        span.by.label Nirav
+                        span.date.badge.badge-important Today
+                      .pull-right
+                        a.tip(href='#', title='Edit Task')
+                          i.icon-pencil
+                        a.tip(href='#', title='Delete')
+                          i.icon-remove
+                    li.clearfix
+                      .txt
+                        | Manage Pending Orders
+                        span.by.label Alex
+                        span.date.badge.badge-warning Today
+                      .pull-right
+                        a.tip(href='#', title='Edit Task')
+                          i.icon-pencil
+                        a.tip(href='#', title='Delete')
+                          i.icon-remove
+                    li.clearfix
+                      .txt
+                        | MAke your desk clean
+                        span.by.label Admin
+                        span.date.badge.badge-success Tomorrow
+                      .pull-right
+                        a.tip(href='#', title='Edit Task')
+                          i.icon-pencil
+                        a.tip(href='#', title='Delete')
+                          i.icon-remove
+                    li.clearfix
+                      .txt
+                        | Today we celebrate the great looking theme
+                        span.by.label Admin
+                        span.date.badge.badge-info 08.03.2013
+                      .pull-right
+                        a.tip(href='#', title='Edit Task')
+                          i.icon-pencil
+                        a.tip(href='#', title='Delete')
+                          i.icon-remove
+                    li.clearfix
+                      .txt
+                        | Manage all the orders
+                        span.by.label Mark
+                        span.date.badge.badge-info 12.03.2013
+                      .pull-right
+                        a.tip(href='#', title='Edit Task')
+                          i.icon-pencil
+                        a.tip(href='#', title='Delete')
+                          i.icon-remove
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-ok
+                h5 To Do list
+              .widget-content
+                ul.unstyled
+                  li
+                    span.icon24.icomoon-icon-arrow-up-2.green
+                    |  81% Clicks
+                    span.pull-right.strong 567
+                    .progress.progress-striped
+                      .bar(style='width: 81%;')
+                  li
+                    span.icon24.icomoon-icon-arrow-up-2.green
+                    |  72% Uniquie Clicks
+                    span.pull-right.strong 507
+                    .progress.progress-success.progress-striped
+                      .bar(style='width: 72%;')
+                  li
+                    span.icon24.icomoon-icon-arrow-down-2.red
+                    |  53% Impressions
+                    span.pull-right.strong 457
+                    .progress.progress-warning.progress-striped
+                      .bar(style='width: 53%;')
+                  li
+                    span.icon24.icomoon-icon-arrow-up-2.green
+                    |  3% Online Users
+                    span.pull-right.strong 8
+                    .progress.progress-danger.progress-striped
+                      .bar(style='width: 3%;')
+        hr
+        .row-fluid
+          .span4
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-eye-open
+                h5 Browesr statistics
+              .widget-content.nopadding
+                table.table.table-bordered
+                  thead
+                    tr
+                      th Browser
+                      th Visits
+                  tbody
+                    tr
+                      td Chrome
+                      td 8850
+                    tr
+                      td Firefox
+                      td 5670
+                    tr
+                      td Internet Explorer
+                      td 4130
+                    tr
+                      td Opera
+                      td 1574
+                    tr
+                      td Safari
+                      td 1044
+          .span4
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-arrow-right
+                h5 Website statistics
+              .widget-content.nopadding
+                table.table.table-bordered
+                  thead
+                    tr
+                      th Site
+                      th Visits
+                  tbody
+                    tr
+                      td
+                        a(href='#') Themeforest.com
+                      td 12444
+                    tr
+                      td
+                        a(href='#') Themedesigner.in
+                      td 10455
+                    tr
+                      td
+                        a(href='#') Themedesigner.in
+                      td 8455
+                    tr
+                      td
+                        a(href='#') Themedesigner.in
+                      td 4456
+                    tr
+                      td
+                        a(href='#') Themedesigner.in
+                      td 2210
+          .span4
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-file
+                h5 Visited Pages
+              .widget-content.nopadding
+                table.table.table-bordered
+                  thead
+                    tr
+                      th Page
+                      th Visits
+                  tbody
+                    tr
+                      td
+                        a(href='#') Freebies
+                      td 8550
+                    tr
+                      td
+                        a(href='#') Blog
+                      td 7550
+                    tr
+                      td
+                        a(href='#') Work
+                      td 5247
+                    tr
+                      td
+                        a(href='#') site template
+                      td 4880
+                    tr
+                      td
+                        a(href='#') All categories
+                      td 4801
+    // main-container-part
+    // Footer-part
+    .row-fluid
+      #footer.span12
+        | 2013 © Matrix Admin. Brought to you by
+        a(href='http://themedesigner.in') Themedesigner.in
+    // end-Footer-part
+    script(src='js/jquery.min.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/jquery.ui.custom.js')
+    script(src='js/matrix.js')

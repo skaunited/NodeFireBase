@@ -1,0 +1,319 @@
+doctype html
+html(lang='en')
+  head
+    title Matrix Admin
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='css/matrix-style.css')
+    link(rel='stylesheet', href='css/matrix-media.css')
+    link(href='font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800', rel='stylesheet', type='text/css')
+  body
+    // Header-part
+    #header
+      h1
+        a(href='dashboard.html') Matrix Admin
+    // close-Header-part
+    // top-Header-menu
+    #user-nav.navbar.navbar-inverse
+      ul.nav
+        li#profile-messages.dropdown
+          a.dropdown-toggle(title='', href='#', data-toggle='dropdown', data-target='#profile-messages')
+            i.icon.icon-user
+            span.text Welcome User
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='#')
+                i.icon-user
+                |  My Profile
+            li.divider
+            li
+              a(href='#')
+                i.icon-check
+                |  My Tasks
+            li.divider
+            li
+              a(href='login.html')
+                i.icon-key
+                |  Log Out
+        li#menu-messages.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown', data-target='#menu-messages')
+            i.icon.icon-envelope
+            span.text Messages
+            span.label.label-important 5
+            b.caret
+          ul.dropdown-menu
+            li
+              a.sAdd(title='', href='#')
+                i.icon-plus
+                |  new message
+            li.divider
+            li
+              a.sInbox(title='', href='#')
+                i.icon-envelope
+                |  inbox
+            li.divider
+            li
+              a.sOutbox(title='', href='#')
+                i.icon-arrow-up
+                |  outbox
+            li.divider
+            li
+              a.sTrash(title='', href='#')
+                i.icon-trash
+                |  trash
+        li
+          a(title='', href='#')
+            i.icon.icon-cog
+            span.text Settings
+        li
+          a(title='', href='login.html')
+            i.icon.icon-share-alt
+            span.text Logout
+    // start-top-serch
+    #search
+      input(type='text', placeholder='Search here...')
+      button.tip-bottom(type='submit', title='Search')
+        i.icon-search.icon-white
+    // close-top-serch
+    // sidebar-menu
+    #sidebar
+      a.visible-phone(href='#')
+        i.icon.icon-home
+        |  Dashboard
+      ul
+        li.active
+          a(href='index')
+            i.icon.icon-home
+            span Dashboard
+        li
+          a(href='charts')
+            i.icon.icon-signal
+            span Charts & graphs
+        li
+          a(href='widgets')
+            i.icon.icon-inbox
+            span Widgets
+        li
+          a(href='tables')
+            i.icon.icon-th
+            span Tables
+        li
+          a(href='grid')
+            i.icon.icon-fullscreen
+            span Full width
+        li.submenu
+          a(href='#')
+            i.icon.icon-th-list
+            span Forms
+            span.label.label-important 3
+          ul
+            li
+              a(href='form-common') Basic Form
+            li
+              a(href='form-validation') Form with Validation
+            li
+              a(href='form-wizard') Form with Wizard
+        li
+          a(href='buttons')
+            i.icon.icon-tint
+            span Buttons & icons
+        li
+          a(href='interface')
+            i.icon.icon-pencil
+            span Eelements
+        li.submenu
+          a(href='#')
+            i.icon.icon-file
+            span Addons
+            span.label.label-important 5
+          ul
+            li
+              a(href='index2') Dashboard2
+            li
+              a(href='gallery') Gallery
+            li
+              a(href='calendar') Calendar
+            li
+              a(href='invoice') Invoice
+            li
+              a(href='chat') Chat option
+        li.submenu
+          a(href='#')
+            i.icon.icon-info-sign
+            span Error
+            span.label.label-important 4
+          ul
+            li
+              a(href='error403') Error 403
+            li
+              a(href='error404') Error 404
+            li
+              a(href='error405') Error 405
+            li
+              a(href='error500') Error 500
+        li.content
+          span Monthly Bandwidth Transfer
+          .progress.progress-mini.progress-danger.active.progress-striped
+            .bar(style='width: 77%;')
+          span.percent 77%
+          .stat 21419.94 / 14000 MB
+        li.content
+          span Disk Space Usage
+          .progress.progress-mini.active.progress-striped
+            .bar(style='width: 87%;')
+          span.percent 87%
+          .stat 604.44 / 4000 MB
+    #content
+      #content-header
+        #breadcrumb
+          a.tip-bottom(href='#', title='Go to Home')
+            i.icon-home
+            |  Home
+          a(href='#') Addons pages
+          a.current(href='#') invoice
+        h1 Invoice
+      .container-fluid
+        hr
+        .row-fluid
+          .span12
+            .widget-box
+              .widget-title
+                span.icon
+                  i.icon-briefcase
+                h5 Company Name
+              .widget-content
+                .row-fluid
+                  .span6
+                    table
+                      tbody
+                        tr
+                          td
+                            h4 Your Company Name
+                        tr
+                          td Your Town
+                        tr
+                          td Your Region/State
+                        tr
+                          td Mobile Phone: +4530422244
+                        tr
+                          td me@company.com
+                  .span6
+                    table.table.table-bordered.table-invoice
+                      tbody
+                        tr
+                        tr
+                          td.width30 Invoice ID:
+                          td.width70
+                            strong TD-6546
+                        tr
+                          td Issue Date:
+                          td
+                            strong March 23, 2013
+                        tr
+                          td Due Date:
+                          td
+                            strong April 01, 2013
+                        td.width30 Client Address:
+                        td.width70
+                          strong Cliente Company name.
+                          br
+                          |                       501 Mafia Street., washington,
+                          br
+                          |                       NYNC 3654
+                          br
+                          |                       Contact No: 123 456-7890
+                          br
+                          |                       Email: youremail@companyname.com
+                .row-fluid
+                  .span12
+                    table.table.table-bordered.table-invoice-full
+                      thead
+                        tr
+                          th.head0 Type
+                          th.head1 Desc
+                          th.head0.right Qty
+                          th.head1.right Price
+                          th.head0.right Amount
+                      tbody
+                        tr
+                          td Firefox
+                          td
+                            | Ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                          td.right 2
+                          td.right $150
+                          td.right
+                            strong $300
+                        tr
+                          td Chrome Plugin
+                          td
+                            | Tro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt u eos et accusamus et iusto odio dignissimos ducimus  deleniti atque
+                          td.right 1
+                          td.right $1,200
+                          td.right
+                            strong $1,2000
+                        tr
+                          td Safari App
+                          td
+                            | Rro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt u expedita distinctio
+                          td.right 2
+                          td.right $850
+                          td.right
+                            strong $1,700
+                        tr
+                          td Opera App
+                          td
+                            | Orro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+                          td.right 3
+                          td.right $850
+                          td.right
+                            strong $2,550
+                        tr
+                          td Netscape Template
+                          td
+                            | Vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
+                          td.right 5
+                          td.right $50
+                          td.right
+                            strong $250
+                    table.table.table-bordered.table-invoice-full
+                      tbody
+                        tr
+                          td.msg-invoice(width='85%')
+                            h4 Payment method:
+                            a.tip-bottom(href='#', title='Wire Transfer') Wire transfer
+                            a.tip-bottom(href='#', title='Bank account') Bank account #
+                            a.tip-bottom(href='#', title='SWIFT code') SWIFT code
+                            a.tip-bottom(href='#', title='IBAN Billing address') IBAN Billing address
+                          td.right
+                            strong Subtotal
+                            br
+                            strong Tax (5%)
+                            br
+                            strong Discount
+                          td.right
+                            strong
+                              | $7,000
+                              br
+                              |                         $600
+                              br
+                              |                         $50
+                    .pull-right
+                      h4
+                        span Amount Due:
+                        |  $7,650.00
+                      br
+                      a.btn.btn-primary.btn-large.pull-right(href='') Pay Invoice
+    // Footer-part
+    .row-fluid
+      #footer.span12
+        | 2013 © Matrix Admin. Brought to you by
+        a(href='http://themedesigner.in') Themedesigner.in
+    // end-Footer-part
+    script(src='js/jquery.min.js')
+    script(src='js/jquery.ui.custom.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/matrix.js')
